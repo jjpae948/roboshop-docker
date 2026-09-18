@@ -18,11 +18,7 @@ services:
     - "80:80"
     depends_on:
     - catalogue
-
   networks:
-    default:
       name: roboshop
       driver: bridge
       external: false # if true it should be created manually, if false docker creates this netwwork
-
-    
