@@ -2,7 +2,7 @@ name: roboshop
 services:
   mongodb:
     build: ./mongodb
-    image: joindevops/mongodb:v1.0 # docker build -t joindevops/mongodb:v1
+    image: joindevops/mongodb:v1 # docker build -t joindevops/mongodb:v1
     container_name: mongodb # docker run -d --network roboshop joindevops/mongodb:v1
   catalogue:
     build: ./catalogue
@@ -18,8 +18,9 @@ services:
     - "80:80"
     depends_on:
     - catalogue
-  networks:
-     default: #  this means all the services in this file use this network
-      name: roboshop
-      driver: bridge
-      external: false # if true it should be created  manually, if false docker creates this netwwork
+
+networks:
+  default: # this mean all the services in this file use this network
+    name: roboshop 
+    driver: bridge
+    external: false # if true it should be created manually,if false docker creates this network
