@@ -23,5 +23,5 @@ networks:
   default: # this mean all the services in this file use this network
     name: roboshop 
     driver: bridge
-    external: true
-     # if true it should be created manually,if false docker creates this network
+    external: false
+   # if true it should be created manually,if false docker creates this network
